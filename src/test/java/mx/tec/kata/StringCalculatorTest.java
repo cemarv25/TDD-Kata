@@ -46,4 +46,14 @@ class StringCalculatorTest {
 		
 		assertEquals(expectedResult, actualResult);
 	}
+	
+	@Test
+	void givenCalculator_whenAdd1NewLine2Comma3_thenReturn6() {
+		int expectedResult = 6;
+		String numbers = "1\n2,3";
+		
+		int actualResult = calculator.add(numbers);
+		
+		assertEquals(expectedResult, actualResult);
+	}
 }
