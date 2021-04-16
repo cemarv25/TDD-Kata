@@ -66,4 +66,19 @@ class StringCalculatorTest {
 		
 		assertEquals(expectedResult, actualResult);
 	}
+	
+	@Test
+	void givenCalculator_whenAdd1_Minus3_5_Minus7_9_thenExceptionNegativesNotAllowed() {
+		String expectedMessage = "Negatives not allowed: -3, -7";
+		String numbers = "1,-3,5,-7,9";
+		
+		try {			
+			calculator.add(numbers);
+			fail("Exception not thrown.");
+		} 
+		catch (UnsupportedOperationException e) {
+			assertEquals(expectedMessage, e.getMessage());
+		}
+		
+	}
 }

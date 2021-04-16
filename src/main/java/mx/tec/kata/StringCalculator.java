@@ -1,5 +1,8 @@
 package mx.tec.kata;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class StringCalculator {
 	
 	public int add(String numbers) {
@@ -19,11 +22,19 @@ public class StringCalculator {
 
 		int sum = 0;
 		String[] arrayNumbers = sanitizedNumbers.split("\\n|" + delimiter);
+		List<String> negativeNumbers = new ArrayList<String>();
 
 		for (String numString : arrayNumbers) {
+			if (numString.startsWith("-")) {
+				negativeNumbers.add(numString);
+			}
 			sum += Integer.parseInt(numString);
 		}
 		
+		if (!negativeNumbers.isEmpty()) {
+			String negativeNumbersString = negativeNumbers.toString();
+			throw new UnsupportedOperationException("Negatives not allowed: " + negativeNumbersString.substring(1, negativeNumbersString.length() - 1));
+		}
 
 		return sum;
 	}
