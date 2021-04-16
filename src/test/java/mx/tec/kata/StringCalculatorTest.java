@@ -56,4 +56,14 @@ class StringCalculatorTest {
 		
 		assertEquals(expectedResult, actualResult);
 	}
+	
+	@Test
+	void givenCalculator_whenAddSlashSlashSemiColonNewLine1SemiColon2_Return3() {
+		int expectedResult = 3;
+		String numbers = "//;\n1;2";
+		
+		int actualResult = calculator.add(numbers);
+		
+		assertEquals(expectedResult, actualResult);
+	}
 }
