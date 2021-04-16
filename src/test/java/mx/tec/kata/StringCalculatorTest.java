@@ -36,4 +36,14 @@ class StringCalculatorTest {
 		
 		assertEquals(expectedResult, actualResult);
 	}
+	
+	@Test
+	void givenCalculator_whenAdd1_3_5_7_9_thenReturn25() {
+		int expectedResult = 25;
+		String numbers = "1,3,5,7,9";
+		
+		int actualResult = calculator.add(numbers);
+		
+		assertEquals(expectedResult, actualResult);
+	}
 }
